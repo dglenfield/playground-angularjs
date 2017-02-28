@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="MyApp">
+        <div ng-controller="MyCtrl">
+            <label>Primitive</label>
+            <input type="text" ng-model="name"></input>
+            
+            <label>Object</label>
+            <input type="text" ng-model="user.name"></input>
+
+            <div class="nested" ng-controller="MyNestedCtrl">
+                <label>Primitive</label>
+                <input type="text" ng-model="name"></input>
+
+                <label>Primitive with explicit $parent reference</label>
+                <input type="text" ng-model="$parent.name"></input>
+
+                <label>Object</label>
+                <input type="text" ng-model="user.name"></input>
+            </div>
+        </div>
+    </body>
+</html>
